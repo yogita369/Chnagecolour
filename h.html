@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="h.css">
+    <title>change colour.com</title>
+    <style>
+    *{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+    
+    .space{
+        padding-top:80px;
+    }
+    p{
+        font-size:50px;
+        color: rgb(28, 9, 102);
+        font-weight:900;
+    }
+    
+    .text{
+        text-align: center;
+    }
+    
+    .line{
+        width:400px;
+        height: 1px;
+        background-color:black;
+    
+    }
+    .photo{
+        height:250px;
+        width:200px;
+        position:absolute;
+        border: 10px solid rgba(128, 128, 128, 0.518);
+        border-radius: 15px;
+        top:120px;
+        left: 500px;
+        background-color: aqua;
+    
+    }
+    img{
+        height:250px;
+        width:200px;
+        border-radius: 10px;
+    }
+    button{
+        height:70px;
+        width:200px;
+        position:absolute;
+        left:730px;
+        border-radius:10px;
+        font-size:18px;
+    }
+    button:hover{
+        font-size:20px;
+        font-weight: 600;
+        box-shadow: 10px 10px rgba(128, 128, 128, 0.565);
+    }
+    .card{
+        height:780px;
+        width:700px;
+        position:absolute;
+        top:200px;
+        left:450px;
+        bottom:40px;
+        padding: 30px 0px 0px 50px;
+        background-color:rgba(128, 128, 128, 0.321);
+        border: 10px solid rgba(128, 128, 128, 0.648);
+        border-radius:20px;
+        box-shadow: 40px 40px rgba(128, 128, 128, 0.198);
+    }
+    h3{
+        color: rgb(44, 44, 44);
+    }
+    </style>
+</head>
+<body>
+
+    <h1 class="text">Change background colour</h1>
+    <br>
+<button>Change colour</button>
+<br>
+<br>
+
+    <div class="card">
+        <p>Introduction</p>
+        
+        <div class="line"></div>
+        <div class="photo">
+            <img src="profile.jpeg"/>
+        </div>
+        <h3 class="space">Name:</h3><h2>Yogita yadav</h2>
+        <h3>College:</h3><h2>Bajaj institute of technology,Wardha</h2>
+        <h3>Year:</h3><h2>II Year</h2>
+        <h3>Hobbies:</h3> <h2>Painting , Art & Crafts ,Astronomy, Designing</h2>
+        <h3>CGPA:</h3><h2>8.0</h2>
+    </div>
+
+
+<script >
+    let btn=document.querySelector("button");
+
+btn.addEventListener("click",function(){
+    let h1=document.querySelector("h1");
+    let randomColor = getrandomcolour();
+
+
+    let div=document.querySelector('div');
+div.style.backgroundColor=randomColor;
+
+    console.log('colour updated');
+});
+
+function getrandomcolour(){
+    let red=Math.floor(Math.random()*255);
+    let green=Math.floor(Math.random()*255);
+    let blue=Math.floor(Math.random()*255);
+
+    let colour=`rgb(${red},${green},${blue})`;
+    return colour;
+}
+</script>
+
+
+
+</body>
+</html>
